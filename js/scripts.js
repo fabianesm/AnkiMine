@@ -52,3 +52,21 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener todos los enlaces de navegación
+    var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+    // Agregar evento click a cada enlace
+    navLinks.forEach(function(navLink) {
+        navLink.addEventListener("click", function(event) {
+            // Remover la clase "active" de todos los enlaces
+            navLinks.forEach(function(link) {
+                link.classList.remove("active");
+            });
+
+            // Agregar la clase "active" al enlace seleccionado
+            this.classList.add("active");
+        });
+    });
+});
